@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
   height: 50px;
   align-items: center;
   font-size: 10px;
-  background-color: orange;
+  background-color: #444;
   color: white;
   &>div {
     margin: 0px 16px;
@@ -28,9 +28,7 @@ const StyledFooter = styled.footer`
 
 const Footer = ({ siteTitle }) => (
   <StyledFooter>
-    <div>{"vive les open data tourisme !"}</div>
-    <div>{"réalisé par the code is green"}</div>
-    <div>{"hello@thecodeisgreen.com"}</div>
+    <div>{"réalisé avec Gatsby"}</div>
   </StyledFooter>
 )
 

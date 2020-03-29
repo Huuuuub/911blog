@@ -9,7 +9,7 @@ const StyledTitle = styled.div`
   align-items: flex-end;
   font-size: 11px;
   padding: 0px 32px 16px 32px;
-  //border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #fafafa;
   background-color: white;
   &>h2 {
     margin: 0px;

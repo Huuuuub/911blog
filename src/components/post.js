@@ -7,10 +7,10 @@ const R = require('ramda')
 
 const StyledThumb = styled.div`
   display: flex;
-  margin: 16px 0px;
+  margin: 16px 0px 64px 0px;
   width: 100%;
   padding: 32px 0px;
-  background-color: #fcfcfc;
+  background-color: white;
   border-radius: 4px;
 `
 const StyledBody = styled.div`
@@ -28,9 +28,10 @@ const StyledBody = styled.div`
 const StyledContent = styled.div`
   padding: 0px 32px;
   width: 100%;
+  background-color: #fbfbfb;
 `;
 
-const EventThumb = ({event}) => {
+const Post = ({event}) => {
   return (
     <StyledThumb>
       <StyledBody>
@@ -43,4 +44,4 @@ const EventThumb = ({event}) => {
   )
 }
 
-export default EventThumb
+export default Post
