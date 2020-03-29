@@ -5,18 +5,27 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.7",
+    "@mdx-js/react": "^1.5.7",
+    "@pauliescanlon/gatsby-mdx-embed": "^0.0.17",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-layout": "^1.1.23",
     "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-mdx": "^1.0.82",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.3",
-    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-filesystem": "^2.1.55",
+    "gatsby-transformer-remark": "^2.6.58",
     "gatsby-transformer-sharp": "^2.3.13",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
+    "ramda": "^0.27.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

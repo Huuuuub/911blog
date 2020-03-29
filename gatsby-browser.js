@@ -1,7 +1,5 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import "./src/styles/global.css"
+import moment from 'moment'
+import 'moment/locale/fr';
 
-// You can delete this file if you're not using it
+moment.locale('fr')
