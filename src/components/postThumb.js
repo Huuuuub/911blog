@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Title from './title'
+import { Link } from "gatsby"
 
 const R = require('ramda')
 
@@ -18,7 +19,6 @@ const StyledBody = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  
   &>h2 {
     font-size: 14px;
     color: ${props => props.theme.color};
@@ -26,22 +26,40 @@ const StyledBody = styled.div`
 `
 
 const StyledContent = styled.div`
-  padding: 0px 32px;
+  padding: 16px 32px;
   width: 100%;
   background-color: #fbfbfb;
 `;
 
-const Post = ({event}) => {
+const StyledComment = styled.div`
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  &>a {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #444;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+`;
+
+const PostThumb = ({post}) => {
   return (
     <StyledThumb>
       <StyledBody>
-        <Title date={event.date} title={event.title}/>
+        <Title date={post.date} title={post.title}/>
         <StyledContent>
-          <MDXRenderer>{event.body}</MDXRenderer>
+          <MDXRenderer>{post.body}</MDXRenderer>
+          <StyledComment>
+          <Link to={`/post/${post.ref}`}>Commenter</Link>
+        </StyledComment>
         </StyledContent>
       </StyledBody>
     </StyledThumb>
   )
 }
 
-export default Post
+export default PostThumb

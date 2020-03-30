@@ -1,27 +1,28 @@
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-import styled from 'styled-components'
+import Comments from '../components/comments';
 
 export const query = graphql`
-  query($path: String!) {
-    mdx(frontmatter: { path: {eq: $path }}) {
+  query($ref: String!) {
+    mdx(frontmatter: { ref: {eq: $ref }}) {
       frontmatter {
         title
-        path
+        ref
       }
       body
     }
   }
 `;
 
-const Post = ({ data: { mdx: post } }) => {
-  const { title } = post.frontmatter;
-  const { body } = post;
+const Post = ({data:{mdx}}) => {
+  const {title} = mdx.frontmatter
+  const { body } = mdx;
   return (
     <>
       <h1>{title}</h1>
-      <MDXRenderer>{body}</MDXRenderer>
+      {<MDXRenderer>{body}</MDXRenderer>}
+      <Comments/>
     </>
   );
 };

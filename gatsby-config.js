@@ -31,8 +31,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `event`,
-        path: `${__dirname}/content/events/`,
+        name: `post`,
+        path: `${__dirname}/content/posts/`,
       },
     },
     {
@@ -46,6 +46,12 @@ module.exports = {
       resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
       },
     },
     `gatsby-plugin-mdx`,

@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import Post from '../components/post'
-import moment from 'moment'
+import PostThumb from '../components/postThumb'
+
 export default ({ data }) => {
   const events = data.allMdx.nodes
   return (
     <>
-      {events.map((event) => (
-        <Post key={event.frontmatter.ref} event={{...event.frontmatter, body: event.body}}/>
+      {events.map((post) => (
+        <PostThumb key={post.frontmatter.ref} post={{...post.frontmatter, body: post.body}}/>
       ))}
     </>
   )

@@ -6,6 +6,7 @@ import theme from './theme'
 import mdxComponents from './mdxComponents'
 import Header from "./header"
 import Footer from "./footer"
+import { Helmet } from "react-helmet"
 
 const StyledLayout = styled.div`
   display: flex;
@@ -38,6 +39,19 @@ const Root = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
+    {/*
+      <Helmet>
+        <script
+          src="https://commento.thecodeisgreen.com/js/commento.js"
+          data-auto-init="false"
+        />
+        <script>
+          {`
+              console.log('commento loaded');
+          `}
+        </script>
+      </Helmet>
+      */}
       <StyledLayout>
         <Header siteTitle={data.site.siteMetadata.title} />
         <StyledLayoutBody>
