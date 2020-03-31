@@ -16,13 +16,13 @@ export const query = graphql`
 `;
 
 const Post = ({data:{mdx}}) => {
-  const {title} = mdx.frontmatter
+  const {title, ref} = mdx.frontmatter
   const { body } = mdx;
   return (
     <>
       <h1>{title}</h1>
       {<MDXRenderer>{body}</MDXRenderer>}
-      <Comments/>
+      <Comments pageId={`/post/${ref}`}/>
     </>
   );
 };

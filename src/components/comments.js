@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledComments = styled.div`
   margin-top: 128px;
 `;
-export default () => {
+export default ({pageId}) => {
   const [loadScript, setLoadScript] = useState(false)
   useEffect(() => {
     setLoadScript(true)
@@ -18,6 +18,7 @@ return (
           <script
             src="https://commento.thecodeisgreen.com/js/commento.js"
             data-auto-init="true"
+            data-page-id={pageId}
           />
         </Helmet>
       )}
