@@ -2,12 +2,15 @@ import React from 'react'
 import { graphql } from "gatsby"
 import PostThumb from '../components/postThumb'
 
-export default ({ data }) => {
+export default ({ pageContext, data }) => {
   const events = data.allMdx.nodes
   return (
     <>
       {events.map((post) => (
-        <PostThumb key={post.frontmatter.ref} post={{...post.frontmatter, body: post.body}}/>
+        <PostThumb 
+          key={post.frontmatter.ref}
+          post={{...post.frontmatter, body: post.body}}
+        />
       ))}
     </>
   )
@@ -24,7 +27,6 @@ export const query = graphql`
         date
         ref
         title
-        path
       }
       body
     }

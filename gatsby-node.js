@@ -1,5 +1,5 @@
 const path = require(`path`)
-
+const slugify = require('slugify')
 exports.createPages = async ({ node, actions, graphql, reporter, getNode }) => {
   const { createPage } = actions
 
@@ -13,6 +13,7 @@ exports.createPages = async ({ node, actions, graphql, reporter, getNode }) => {
           node {
             frontmatter {
               ref
+              title
               template
             }
           }
@@ -32,7 +33,7 @@ exports.createPages = async ({ node, actions, graphql, reporter, getNode }) => {
   posts.forEach(({node}, index) => {
     const post = node.frontmatter;
     createPage({
-      path: `/post/${post.ref}`,
+      path: `/post/${post.ref.slice(0, 5)}-${slugify(post.title)}`,
       component: path.resolve('src/templates/post.js'),
       context: {
         ref: post.ref

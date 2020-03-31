@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Title from './title'
 import { Link } from "gatsby"
+const slugify = require('slugify')
 
 const R = require('ramda')
 
@@ -47,6 +48,7 @@ const StyledComment = styled.div`
 `;
 
 const PostThumb = ({post}) => {
+  const path = `/post/${post.ref.slice(0, 5)}-${slugify(post.title)}`
   return (
     <StyledThumb>
       <StyledBody>
@@ -54,7 +56,7 @@ const PostThumb = ({post}) => {
         <StyledContent>
           <MDXRenderer>{post.body}</MDXRenderer>
           <StyledComment>
-          <Link to={`/post/${post.ref}`}>Commenter</Link>
+          <Link to={path}>Commenter</Link>
         </StyledComment>
         </StyledContent>
       </StyledBody>
