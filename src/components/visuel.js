@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import {TwitterTweetEmbed} from 'react-twitter-embed'
 import InstagramEmbed from 'react-instagram-embed';
+import YouTube from 'react-youtube'
+
 const R = require('ramda')
 const StyledVisuel = styled.div`
   margin-top: 32px;
@@ -12,7 +14,8 @@ const StyledVisuel = styled.div`
 
 const Visuel = ({
   instagramId, 
-  tweetId
+  tweetId,
+  youTubeId
 }) => {
   return (
     <StyledVisuel >
@@ -24,6 +27,9 @@ const Visuel = ({
           url={`https://instagr.am/p/${instagramId}/`}
           hideCaption={true}
         />
+      )}
+      {!R.isNil(youTubeId) && (
+        <YouTube videoId={youTubeId}/>
       )}
     </StyledVisuel>
   )
